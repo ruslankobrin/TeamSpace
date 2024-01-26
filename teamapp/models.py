@@ -4,7 +4,7 @@ from django.db import models
 
 class Person(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    teams = models.ManyToManyField('Team', related_name='members')
+    teams = models.ManyToManyField('Team', related_name='members', blank=True)
 
 
 class Team(models.Model):
